@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="proefExamen.DetailPage"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <Grid>
+            <Image x:Name="imgArea" Aspect="AspectFill" />
+            <StackLayout VerticalOptions="End" BackgroundColor="#55000000">
+                <Label x:Name="lblName" TextColor="White" HorizontalTextAlignment="Center" FontSize="Large" />
+                <Label x:Name="lblMayor" TextColor="White" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                <Label x:Name="lblFullName" TextColor="White" HorizontalTextAlignment="Center" />
+                <Label x:Name="lblContinent" TextColor="White" HorizontalTextAlignment="Center" Margin="0,0,0,8" />
+                <Grid RowSpacing="0" ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnBack" Text="Go back" Clicked="btnBack_Clicked"/>
+                    <Button x:Name="btnQualityScores" Text="Quality Of Life" Grid.Column="1" Clicked="btnQualityScores_Clicked"/>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

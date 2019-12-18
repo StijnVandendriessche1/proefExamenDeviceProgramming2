@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             NavigationPage.HasNavigationBar="False"
+             mc:Ignorable="d"
+             x:Class="proefExamen.Views.ScorePage">
+    <ContentPage.Content>
+        <StackLayout Margin="8,16,0,0">
+            <Label x:Name="lblName" FontSize="Large" />
+            <ListView x:Name="lvwScores" Margin="8,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="35"/>
+                                    <ColumnDefinition Width="35"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label HorizontalOptions="Start" VerticalOptions='Center' Text="{Binding Topic}"/>
+                                    <Label HorizontalOptions="End" VerticalOptions="Center" Text="{Binding ScorePercentage, StringFormat='{0:D}%'}"/>
+                                </StackLayout>
+                                <!--<Label Text="{Binding Topic}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Text="{Binding ScorePercentage, StringFormat='{0:D}%'}" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="End"/>-->
+                                <BoxView BackgroundColor="#eeeeee" HeightRequest="10" Grid.Column="1" VerticalOptions="Center"/>
+                                <BoxView BackgroundColor="{Binding Color}" WidthRequest="{Binding ScorePercentage}" HeightRequest="10" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Button HeightRequest="35" Text="+" Grid.Column="3" x:Name="btnAdd" Clicked="btnAdd_Clicked"/>
+                                <Button HeightRequest="35" Text="-" Grid.Column="2" x:Name="btnSubstract" Clicked="btnSubstract_Clicked"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid RowSpacing="0" ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnBackToDetails" Text="Back to details" Clicked="btnBackToDetails_Clicked"/>
+                <Button x:Name="btnBackToMain" Text="Back to area list" Grid.Column="1" Clicked="btnBackToMain_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

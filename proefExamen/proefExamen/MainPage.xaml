@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="proefExamen.MainPage">
+
+    <StackLayout Margin="8,16">
+        <Label Text="Choose an area:" FontSize="Large" />
+        <ListView x:Name="lvwAreas" Margin="8,0" ItemSelected="lvwAreas_ItemSelected"/>
+    </StackLayout>
+
+</ContentPage>
